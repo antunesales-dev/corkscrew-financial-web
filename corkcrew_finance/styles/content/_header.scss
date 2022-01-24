@@ -1,0 +1,37 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+
+  .logo-area, 
+  .user-actions-area {
+    display: flex;
+    align-items: center;
+    padding: 3em 10em;
+    flex-grow: 1;
+  }
+
+  .logo-area img {
+    max-width: 5em;
+  }
+
+  .user-actions-area {
+    justify-content: flex-end;
+
+    a {
+      color: #fff;
+    }
+
+    .fab {
+      font-size: 1.75em;
+      margin: 0 1em;
+    }
+    
+    .fab:hover {
+      color: #c94e29;
+      cursor: pointer;
+      text-shadow: 0 0 20px #c94e2980;
+    }
+  }
+  
+}

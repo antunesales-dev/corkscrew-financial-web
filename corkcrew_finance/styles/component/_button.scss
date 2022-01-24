@@ -1,0 +1,28 @@
+.btn {
+  user-select: none;
+  outline: none;
+  &-primary {
+    padding: 0.5em;
+    background-color: #c94e2980;
+    border: 0;
+    min-width: 10em;
+    font-size: 1.25em;
+  }
+  
+  &-primary:hover {
+    background-color: #c94e2980;
+  }
+
+  &-primary:active, &-primary:focus {
+
+    background-color: #c94e2980;
+  }
+  
+  &-medium {
+    width: 7em;
+  }
+  
+  &-rounded {
+    border-radius: 5em;
+  }
+}

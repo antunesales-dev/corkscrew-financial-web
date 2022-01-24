@@ -1,0 +1,495 @@
+.btn {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  outline: none;
+}
+
+.btn-primary {
+  padding: 0.5em;
+  background-color: #c94e2980;
+  border: 0;
+  min-width: 10em;
+  font-size: 1.25em;
+}
+
+.btn-primary:hover {
+  background-color: #c94e2980;
+}
+
+.btn-primary:active, .btn-primary:focus {
+  background-color: #c94e2980;
+}
+
+.btn-medium {
+  width: 7em;
+}
+
+.btn-rounded {
+  border-radius: 5em;
+}
+
+/* ::: HOLDER, CARD, FACES */
+.nft-card {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-perspective: 700px;
+          perspective: 700px;
+}
+
+.nft-card img {
+  width: 200px;
+}
+
+.nft-card .nft-card-wrapper, .nft-card .nft-card-front {
+  position: absolute;
+  height: inherit;
+  width: inherit;
+  border: none;
+  -webkit-transition: all .7s;
+  transition: all .7s;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.nft-card .nft-card-wrapper, .nft-card .nft-card-back {
+  -webkit-backface-visibility: visible;
+          backface-visibility: visible;
+}
+
+/* ::: SETUP FACES */
+.nft-card-flip .nft-card-back {
+  -webkit-transform: rotateY(-180deg);
+          transform: rotateY(-180deg);
+}
+
+/* ::: HOVER EFFECTS (Remove Automated for this to work) */
+.nft-card-flip:hover .nft-card-wrapper {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+
+/* ::: AUTOMATED EFFECTS */
+.nft-card-flip .nft-card-wrapper {
+  animation: nft-card-flip 5s 0s infinite alternate ease-in-out;
+  -webkit-animation: nft-card-flip 5s 0s infinite alternate ease-in-out;
+}
+
+.nft-card-flip:nth-child(3) .nft-card-wrapper {
+  -webkit-animation-delay: 5s;
+  animation-delay: 5s;
+}
+
+@keyframes nft-card-flip {
+  0% {
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
+  100% {
+    -webkit-transform: rotateY(-180deg);
+            transform: rotateY(-180deg);
+  }
+}
+
+@-webkit-keyframes nft-card-flip {
+  0% {
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
+  100% {
+    -webkit-transform: rotateY(-180deg);
+            transform: rotateY(-180deg);
+  }
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline {
+  position: relative;
+  max-width: 100vw;
+  margin: 0;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background-color: #c94e29;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+  z-index: -1;
+}
+
+/* Container around content */
+.container {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+
+/* The circles on the timeline */
+.container::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -17px;
+  background-color: #c94e29;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Place the container to the left */
+.left {
+  left: -25.3%;
+}
+
+/* Place the container to the right */
+.right {
+  left: 25.3%;
+}
+
+/* Add arrows to the left container (pointing right) */
+.left::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  right: 30px;
+  border: medium solid #4e5e5a;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent #4e5e5a;
+}
+
+/* Add arrows to the right container (pointing left) */
+.right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  left: 30px;
+  border: medium solid #4e5e5a;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent #4e5e5a transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.right::after {
+  left: -16px;
+}
+
+/* The actual content */
+.content {
+  padding: 20px 30px;
+  background-color: #4e5e5a;
+  position: relative;
+  border-radius: 6px;
+}
+
+/* Media queries - Responsive timeline on screens less than 600px wide */
+@media screen and (max-width: 600px) {
+  /* Place the timelime to the left */
+  .timeline::after {
+    left: 31px;
+  }
+  /* Full-width containers */
+  .container {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+  /* Make sure that all arrows are pointing leftwards */
+  .container::before {
+    left: 60px;
+    border: medium solid #ffffff23;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent #ffffff23 transparent transparent;
+  }
+  /* Make sure all circles are at the same spot */
+  .left::after, .right::after {
+    left: 15px;
+  }
+  /* Make all right containers behave like the left ones */
+  .right {
+    left: 0%;
+  }
+}
+
+.separator {
+  width: 0.5em;
+  height: 0.5em;
+  border-radius: 100%;
+  background-color: #fff;
+  margin: 1em;
+}
+
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+}
+
+.header .logo-area,
+.header .user-actions-area {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 3em 10em;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.header .logo-area img {
+  max-width: 5em;
+}
+
+.header .user-actions-area {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.header .user-actions-area a {
+  color: #fff;
+}
+
+.header .user-actions-area .fab {
+  font-size: 1.75em;
+  margin: 0 1em;
+}
+
+.header .user-actions-area .fab:hover {
+  color: #c94e29;
+  cursor: pointer;
+  text-shadow: 0 0 20px #c94e2980;
+}
+
+.body-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+  max-width: 100vw;
+  overflow-y: auto;
+}
+
+.body-wrapper .body-title {
+  padding-top: 2em;
+  font-size: 3em;
+}
+
+.body-wrapper .app-actions-area {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  width: 90%;
+  padding: 4em;
+}
+
+.body-wrapper .body-context {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 80%;
+  padding-top: 3em;
+}
+
+.body-wrapper .body-context .context-top-area {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 80%;
+}
+
+.body-wrapper .body-context .context-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-right: 1em;
+}
+
+.body-wrapper .body-context .context-wrapper .context-title {
+  width: 100%;
+  text-align: center;
+  font-size: 25px;
+}
+
+.body-wrapper .body-context .context-wrapper .context-body {
+  padding-top: 1em;
+  font-size: 1.15em;
+}
+
+.body-wrapper .body-allocation-area {
+  padding-top: 1.25em;
+}
+
+.body-wrapper .body-allocation-area .allocation-area {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.body-wrapper .body-allocation-area .allocation-label {
+  font-size: 20px;
+  width: 10em;
+}
+
+.body-wrapper .body-allocation-area .allocation-visual-area {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-right: 0.5em;
+  width: 15em;
+  height: 1em;
+  background-color: #485a58;
+  border-radius: 1em;
+  font-size: 20px;
+}
+
+.body-wrapper .body-allocation-area .allocation-visual-area .allocation-treasury-visual-area {
+  width: 70%;
+  height: 100%;
+  background-color: #c94e29;
+  border-radius: 1em;
+}
+
+.body-wrapper .body-allocation-area .allocation-visual-area .allocation-liquidity-visual-area {
+  width: 20%;
+  height: 100%;
+  background-color: #c94e29;
+  border-radius: 1em;
+}
+
+.body-wrapper .body-allocation-area .allocation-visual-area .allocation-team-visual-area {
+  width: 10%;
+  height: 100%;
+  background-color: #c94e29;
+  border-radius: 1em;
+}
+
+.body-wrapper .context-bottom-area {
+  padding-top: 7em;
+}
+
+.body-wrapper .context-bottom-area h4 {
+  width: 100%;
+  padding: 0.75em;
+  background-color: #c94e29;
+  text-align: center;
+  margin: 2em 0;
+  border-radius: 6px;
+}
+
+.body-wrapper .footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding-top: 4em;
+}
+
+.body-wrapper .footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0;
+  margin: 0;
+  background-color: #242d2c;
+  color: #fff;
+  overflow: hidden;
+  height: 100vh;
+  font-family: 'Helvetica', 'Arial', sans-serif;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #4e5e5a;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #c94e29;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #c94e2980;
+}
+/*# sourceMappingURL=style.css.map */
