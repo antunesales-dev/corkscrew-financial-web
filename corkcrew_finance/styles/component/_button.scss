@@ -1,12 +1,12 @@
 .btn {
+  min-width: 15em;
+  margin-top: 1em;
   user-select: none;
   outline: none;
+  
   &-primary {
-    padding: 0.5em;
     background-color: #c94e2980;
     border: 0;
-    min-width: 10em;
-    font-size: 1.25em;
   }
   
   &-primary:hover {
@@ -14,7 +14,6 @@
   }
 
   &-primary:active, &-primary:focus {
-
     background-color: #c94e2980;
   }
   

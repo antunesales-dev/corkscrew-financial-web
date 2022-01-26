@@ -1,4 +1,6 @@
 .btn {
+  min-width: 15em;
+  margin-top: 1em;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -7,11 +9,8 @@
 }
 
 .btn-primary {
-  padding: 0.5em;
   background-color: #c94e2980;
   border: 0;
-  min-width: 10em;
-  font-size: 1.25em;
 }
 
 .btn-primary:hover {
@@ -46,6 +45,9 @@
 
 .nft-card .nft-card-wrapper, .nft-card .nft-card-front {
   position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   height: inherit;
   width: inherit;
   border: none;
@@ -104,6 +106,12 @@
   100% {
     -webkit-transform: rotateY(-180deg);
             transform: rotateY(-180deg);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .nft-card {
+    display: none;
   }
 }
 
@@ -220,11 +228,11 @@
   }
   /* Make sure all circles are at the same spot */
   .left::after, .right::after {
-    left: 15px;
+    left: 5%;
   }
   /* Make all right containers behave like the left ones */
-  .right {
-    left: 0%;
+  .left, .right {
+    left: 1%;
   }
 }
 
@@ -244,7 +252,11 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   width: 100%;
+  padding: 1em;
 }
 
 .header .logo-area,
@@ -255,14 +267,16 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 3em 10em;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
 }
 
 .header .logo-area img {
-  max-width: 5em;
+  max-width: 7em;
+  border-radius: 100%;
+  -webkit-box-shadow: 0 0 1em #485a58;
+          box-shadow: 0 0 1em #485a58;
 }
 
 .header .user-actions-area {
@@ -298,11 +312,13 @@
       -ms-flex-align: center;
           align-items: center;
   height: 100vh;
-  max-width: 100vw;
+  width: 100vw;
   overflow-y: auto;
 }
 
 .body-wrapper .body-title {
+  width: 90vw;
+  text-align: center;
   padding-top: 2em;
   font-size: 3em;
 }
@@ -314,9 +330,10 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   width: 90%;
   padding: 4em;
 }
@@ -329,8 +346,10 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 80%;
-  padding-top: 3em;
 }
 
 .body-wrapper .body-context .context-top-area {
@@ -341,7 +360,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 80%;
+  width: 90%;
 }
 
 .body-wrapper .body-context .context-wrapper {
@@ -353,6 +372,7 @@
       -ms-flex-direction: column;
           flex-direction: column;
   padding-right: 1em;
+  margin-top: 5em;
 }
 
 .body-wrapper .body-context .context-wrapper .context-title {
@@ -362,8 +382,21 @@
 }
 
 .body-wrapper .body-context .context-wrapper .context-body {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   padding-top: 1em;
   font-size: 1.15em;
+  width: 90%;
+  text-align: justify;
+}
+
+.body-wrapper .body-context .context-wrapper .context-body .context-description {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .body-wrapper .body-allocation-area {
@@ -377,6 +410,8 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .body-wrapper .body-allocation-area .allocation-label {
@@ -453,6 +488,24 @@
   text-decoration: none;
 }
 
+@media screen and (max-width: 600px) {
+  .context-wrapper {
+    padding: 0;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .context-body {
+    width: 100%;
+  }
+  .context-bottom-area {
+    padding-top: 0;
+  }
+  .footer {
+    font-size: 12px;
+  }
+}
+
 body {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -468,8 +521,8 @@ body {
   margin: 0;
   background-color: #242d2c;
   color: #fff;
-  overflow: hidden;
-  height: 100vh;
+  height: 100%;
+  width: 100vw;
   font-family: 'Helvetica', 'Arial', sans-serif;
 }
 

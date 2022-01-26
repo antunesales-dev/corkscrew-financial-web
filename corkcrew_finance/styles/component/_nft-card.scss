@@ -10,6 +10,7 @@
 
   .nft-card-wrapper, .nft-card-front{
     position: absolute;
+    display: flex;
     height: inherit;
     width: inherit;
     border: none;
@@ -45,4 +46,10 @@
 @-webkit-keyframes nft-card-flip {
   0% { transform: rotateY(0deg); }
   100% { transform: rotateY(-180deg); }
+}
+
+@media screen and (max-width: 600px) { 
+  .nft-card {
+    display: none;
+  }
 }
