@@ -1,0 +1,156 @@
+.body-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  overflow-y: auto;
+
+  .body-title {
+    width: 90vw;
+    text-align: center;
+    padding-top: 2em;
+    font-size: 3em;
+  }
+
+  .app-actions-area {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 90%;
+    padding: 4em;
+  }
+
+  .body-context {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+
+    .context-top-area {
+      display: flex;
+      flex-direction: column;
+      width: 90%;
+    }
+
+    .context-wrapper {
+      display: flex;
+      flex-direction: column;
+      padding-right: 1em;
+      margin-top: 5em;
+
+      .context-title {
+        width: 100%;
+        text-align: center;
+        font-size: 25px;
+      }
+
+      .context-body {
+        position: relative;
+        display: flex;
+        padding-top: 1em;
+        font-size: 1.15em;
+        width: 90%;
+        text-align: justify;
+
+        .context-description {
+          position: relative;
+          display: flex;
+        }
+      }
+    }
+  }
+
+  .body-allocation-area {
+    padding-top: 1.25em;
+
+    .allocation-area {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .allocation-label {
+      font-size: 20px;
+      width: 10em;
+    }
+
+    .allocation-visual-area {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-right: 0.5em;
+      width: 15em;
+      height: 1em;
+      background-color: #485a58;
+      border-radius: 1em;
+      font-size: 20px;
+
+      .allocation-treasury-visual-area {
+        width: 70%;
+        height: 100%;
+        background-color: #c94e29;
+        border-radius: 1em;
+      }
+
+      .allocation-liquidity-visual-area {
+        width: 20%;
+        height: 100%;
+        background-color: #c94e29;
+        border-radius: 1em;
+      }
+
+      .allocation-team-visual-area {
+        width: 10%;
+        height: 100%;
+        background-color: #c94e29;
+        border-radius: 1em;
+      }
+    }
+  }
+
+  .context-bottom-area {
+
+    padding-top: 7em;
+
+    h4 {
+      width: 100%;
+      padding: 0.75em;
+      background-color: #c94e29;
+      text-align: center;
+      margin: 2em 0;
+      border-radius: 6px;
+    }
+  }
+
+
+  .footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-top: 4em;
+
+    a {
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+
+  .context-wrapper {
+    padding: 0;
+    align-items: center;
+  }
+  
+  .context-bottom-area {
+    padding-top: 0;
+  }
+
+  .footer {
+    font-size: 12px;
+  }
+
+}

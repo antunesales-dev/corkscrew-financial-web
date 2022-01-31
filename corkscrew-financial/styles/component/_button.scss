@@ -1,0 +1,36 @@
+.btn {
+  min-width: 15em;
+  margin-top: 1em;
+  user-select: none;
+  outline: none;
+  
+  &-primary {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #c94e2980;
+    border: 0;
+    font-weight: bold;
+    
+    .comming-soon-label {
+      font-size: 12px;
+      font-weight: normal;
+    }
+  }
+  
+  &-primary:hover {
+    background-color: #c94e2980;
+  }
+
+  &-primary:active, &-primary:focus {
+    background-color: #c94e2980;
+  }
+  
+  &-medium {
+    width: 7em;
+  }
+  
+  &-rounded {
+    border-radius: 5em;
+  }
+}
