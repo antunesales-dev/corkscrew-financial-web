@@ -1,55 +1,55 @@
-/* ::: HOLDER, CARD, FACES */
-.nft-card {
-  position: relative;
-  display: inline-flex;
-  perspective: 700px;
+// /* ::: HOLDER, CARD, FACES */
+// .nft-card {
+//   position: relative;
+//   display: inline-flex;
+//   perspective: 700px;
 
-  img {
-    width: 200px;
-  }
+//   img {
+//     width: 200px;
+//   }
 
-  .nft-card-wrapper, .nft-card-front{
-    position: absolute;
-    display: flex;
-    height: inherit;
-    width: inherit;
-    border: none;
-    transition: all .7s;
-    transform-style: preserve-3d;
-    backface-visibility: hidden;
-  }
+//   .nft-card-wrapper, .nft-card-front{
+//     position: absolute;
+//     display: flex;
+//     height: inherit;
+//     width: inherit;
+//     border: none;
+//     transition: all .7s;
+//     transform-style: preserve-3d;
+//     backface-visibility: hidden;
+//   }
 
-  .nft-card-wrapper, .nft-card-back {
-    backface-visibility: visible;
-  }
-}
+//   .nft-card-wrapper, .nft-card-back {
+//     backface-visibility: visible;
+//   }
+// }
 
-/* ::: SETUP FACES */
-.nft-card-flip .nft-card-back{transform: rotateY(-180deg);}
+// /* ::: SETUP FACES */
+// .nft-card-flip .nft-card-back{transform: rotateY(-180deg);}
 
-/* ::: HOVER EFFECTS (Remove Automated for this to work) */
-.nft-card-flip:hover .nft-card-wrapper{ transform: rotateY(180deg); }
+// /* ::: HOVER EFFECTS (Remove Automated for this to work) */
+// .nft-card-flip:hover .nft-card-wrapper{ transform: rotateY(180deg); }
 
-/* ::: AUTOMATED EFFECTS */
-.nft-card-flip .nft-card-wrapper{
-  animation: nft-card-flip 5s 0s infinite alternate ease-in-out;
-  -webkit-animation: nft-card-flip 5s 0s infinite alternate ease-in-out;
-}
-.nft-card-flip:nth-child(3) .nft-card-wrapper {
-    -webkit-animation-delay: 5s;
-    animation-delay: 5s;
-}
-@keyframes nft-card-flip {
-  0% { transform: rotateY(0deg); }
-  100% { transform: rotateY(-180deg); }
-}
-@-webkit-keyframes nft-card-flip {
-  0% { transform: rotateY(0deg); }
-  100% { transform: rotateY(-180deg); }
-}
+// /* ::: AUTOMATED EFFECTS */
+// .nft-card-flip .nft-card-wrapper{
+//   animation: nft-card-flip 5s 0s infinite alternate ease-in-out;
+//   -webkit-animation: nft-card-flip 5s 0s infinite alternate ease-in-out;
+// }
+// .nft-card-flip:nth-child(3) .nft-card-wrapper {
+//     -webkit-animation-delay: 5s;
+//     animation-delay: 5s;
+// }
+// @keyframes nft-card-flip {
+//   0% { transform: rotateY(0deg); }
+//   100% { transform: rotateY(-180deg); }
+// }
+// @-webkit-keyframes nft-card-flip {
+//   0% { transform: rotateY(0deg); }
+//   100% { transform: rotateY(-180deg); }
+// }
 
-@media screen and (max-width: 600px) { 
-  .nft-card {
-    display: none;
-  }
-}
+// @media screen and (max-width: 600px) { 
+//   .nft-card {
+//     display: none;
+//   }
+// }

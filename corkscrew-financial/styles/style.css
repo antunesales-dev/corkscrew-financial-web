@@ -45,92 +45,6 @@
   border-radius: 5em;
 }
 
-/* ::: HOLDER, CARD, FACES */
-.nft-card {
-  position: relative;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-perspective: 700px;
-          perspective: 700px;
-}
-
-.nft-card img {
-  width: 200px;
-}
-
-.nft-card .nft-card-wrapper, .nft-card .nft-card-front {
-  position: absolute;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  height: inherit;
-  width: inherit;
-  border: none;
-  -webkit-transition: all .7s;
-  transition: all .7s;
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-}
-
-.nft-card .nft-card-wrapper, .nft-card .nft-card-back {
-  -webkit-backface-visibility: visible;
-          backface-visibility: visible;
-}
-
-/* ::: SETUP FACES */
-.nft-card-flip .nft-card-back {
-  -webkit-transform: rotateY(-180deg);
-          transform: rotateY(-180deg);
-}
-
-/* ::: HOVER EFFECTS (Remove Automated for this to work) */
-.nft-card-flip:hover .nft-card-wrapper {
-  -webkit-transform: rotateY(180deg);
-          transform: rotateY(180deg);
-}
-
-/* ::: AUTOMATED EFFECTS */
-.nft-card-flip .nft-card-wrapper {
-  animation: nft-card-flip 5s 0s infinite alternate ease-in-out;
-  -webkit-animation: nft-card-flip 5s 0s infinite alternate ease-in-out;
-}
-
-.nft-card-flip:nth-child(3) .nft-card-wrapper {
-  -webkit-animation-delay: 5s;
-  animation-delay: 5s;
-}
-
-@keyframes nft-card-flip {
-  0% {
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-  }
-  100% {
-    -webkit-transform: rotateY(-180deg);
-            transform: rotateY(-180deg);
-  }
-}
-
-@-webkit-keyframes nft-card-flip {
-  0% {
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-  }
-  100% {
-    -webkit-transform: rotateY(-180deg);
-            transform: rotateY(-180deg);
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .nft-card {
-    display: none;
-  }
-}
-
 /* The actual timeline (the vertical ruler) */
 .timeline {
   position: relative;
@@ -419,6 +333,24 @@
   display: flex;
 }
 
+.body-wrapper .body-context .context-wrapper .context-body .context-description .nft-card {
+  width: 100px;
+  margin-left: 1em;
+}
+
+.body-wrapper .body-context .context-wrapper .context-body .context-description .nft-card img {
+  width: 200px;
+  border-radius: 1em;
+  -webkit-box-shadow: 0 0 1em #1c2242;
+          box-shadow: 0 0 1em #1c2242;
+}
+
+.body-wrapper .body-context .context-wrapper .context-body .text-image {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 .body-wrapper .body-allocation-area {
   padding-top: 1.25em;
 }
@@ -514,6 +446,17 @@
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+  }
+  .context-wrapper .context-description {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .context-wrapper .context-description img {
+    margin: 0;
+    margin-top: 1.25em;
+    width: 100%;
   }
   .context-bottom-area {
     padding-top: 0;
